@@ -11,7 +11,16 @@ First and foremost, this project revolves (first time during my 42 cursus) aroun
 After managing to grasp the difference between "signal" and "sigaction" functions (the latter being a little bit harder to grasp due to harsher documentation &&|| more complex behaviour and features), i managed to create a basic couple of files capable of communicating to each other. Since the project limits the scope of usable signals to SIGUSR1 & SIGUSR2, i then started to experiment a bit with bit manipulation. As stated above, even though the final solution came in the form of a simple while loop sending bits one by one in reverse order to the server, i forced myself at first to solve the "deconstruction" of the "char" to send by the use of a recursion. For to be sure i was doing the thing correctly, and understand the effects on what i was doing on the bit, i created an ft_printbits function and added it into my library, i then proceded adding this function in my ft_printf.
 
 Only by trying to solve this little task through recursion and simple math, i realized a few things:
+
 1- I realized how chars are handled by the compiler, especially in strings.
+
 2- By forcing myself to do math operations on binary representation of the bits, i learned (or better grasped) how bits and Bytes are needed by Types, and why.
+
 3- I realized that the sign is not solely a simmetrical addition to the more significant bit. 
+
 4- I learned how UNICODE characters are handled by the terminal itself, and how so. This especially i realized is something not to underestimate and i am glad to have dived deap enough to understand the conversion logic of signed bits into printable characters.
+
+# What i have improved
+By the end of this project i improved my library, adding a function to print in bits, then adding my ft_printf too, and consequently improving my ft_printf to introduce 3 different placeholders to print 8, 16, and 32 bits starting from a pointer address.
+
+My understanding of Mikefiles too had improved during this time, ad by this time i created a better Makefile, silencing useless outputs, and assigning more coherent arguments to it's tasks.
