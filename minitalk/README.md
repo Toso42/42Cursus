@@ -18,7 +18,7 @@ Only by trying to solve this little task through recursion and simple math, i re
 
 3- I realized that the sign is not solely a simmetrical addition to the more significant bit. 
 
-4- I learned how UNICODE characters are handled by the terminal itself, and how so. This especially i realized is something not to underestimate and i am glad to have dived deap enough to understand the conversion logic of signed bits into printable characters.
+4- I learned how UNICODE characters are handled by the terminal itself, and how so. This especially i realized is something not to underestimate and i am glad to have dived deep enough to understand the conversion logic of signed bits into printable characters.
 
 # What i have improved
 By the end of this project i improved my library, adding a function to print in bits, then adding my ft_printf too, and consequently improved my ft_printf to introduce 3 different placeholders to print 8, 16, and 32 bits starting from a pointer address. ***I realize that this feature could induce some safety issues in the code basing the operation on shifts rather than mathematical abstraction, and i plan to add countermeasures to mitigate this in the future***
