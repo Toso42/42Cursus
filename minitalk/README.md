@@ -5,5 +5,6 @@ print: Client on the other hand is to be made to be launched having the server p
 For the Bonus Part, Unicode texting should be made possible, and the Server shall give back a signal after printing the message. I choose the functions name
 after the <a href="https://en.wikipedia.org/wiki/Procedure_word" target="_blank">radio "prowords"</a>.
 
-#What i have learned
+# What i have learned
 First and foremost, this project revolves (first time during my 42 cursus) around 2 arguments: <a href="https://en.wikipedia.org/wiki/Signal_(IPC)" target="_blank">POSIX System Calls (AKA Signals)</a>.
+
