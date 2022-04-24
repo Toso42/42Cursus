@@ -21,6 +21,6 @@ Only by trying to solve this little task through recursion and simple math, i re
 4- I learned how UNICODE characters are handled by the terminal itself, and how so. This especially i realized is something not to underestimate and i am glad to have dived deap enough to understand the conversion logic of signed bits into printable characters.
 
 # What i have improved
-By the end of this project i improved my library, adding a function to print in bits, then adding my ft_printf too, and consequently improved my ft_printf to introduce 3 different placeholders to print 8, 16, and 32 bits starting from a pointer address. ***I realize that this feature could induce some safety issues in the code basing the operation on shifts rather than mathematical abstraction, and i plan to add countermeasures in the future***
+By the end of this project i improved my library, adding a function to print in bits, then adding my ft_printf too, and consequently improved my ft_printf to introduce 3 different placeholders to print 8, 16, and 32 bits starting from a pointer address. ***I realize that this feature could induce some safety issues in the code basing the operation on shifts rather than mathematical abstraction, and i plan to add countermeasures to mitigate this in the future***
 
 My understanding of Mikefiles too had improved during this time, ad by this time i created a better Makefile, silencing useless outputs, and assigning more coherent arguments to it's tasks.
