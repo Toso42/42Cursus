@@ -1,9 +1,9 @@
 # 42Cursus
 This is an historical view on my 42-School Projects.
 
-In this Repo i will upload, in time, the projects that i have completed during my experience at the 42 School of Rome. 
+In this Git i will upload, in time, the projects that i have completed during my experience at the 42 School of Rome. 
 
-# Why this Repo?
+# Why this Git?
 I have created this Git to give myself an opportunity to look back at my past (and present) work from an outside perspective, and to let me stick for future reference my thoughts on what i learned during these assignments, while also explaining the code within these projects (and thus, reflect myself on what i have indeed learned and why i did what i did at the time of "pushing" the project).
 
 # What's 42 School?
