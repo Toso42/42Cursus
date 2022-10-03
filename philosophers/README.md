@@ -4,7 +4,7 @@ Mandatory part expects you to assign a philosopher's routine to a <a href="https
 
 The bonus project is about achieving the same result by creating a separate Process for each Philosopher, and handling critical sections and mutual exclusions through <a href="https://www.geeksforgeeks.org/use-posix-semaphores-c/" target="_blank">POSIX Semaphores</a>.
 
-Not wasting resources by repeating computations becomes especially critical when the program(s) try to simulate more philosophers than phisical threads of the machine CPU. 
+Not wasting resources by repeating computations becomes especially critical when the program(s) try to simulate more philosophers than phisical threads of the machine's CPU. 
 
 Given that everything must be printed on the <a href="" target="_blank"></a> through a printf, the printing job must either be regulated by a mutex or a semaphore.
 
