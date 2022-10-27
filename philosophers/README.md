@@ -8,6 +8,6 @@ Not wasting resources by repeating computations becomes especially critical when
 
 Given that everything must be printed on the <a href="https://it.wikipedia.org/wiki/Canali_standard" target="_blank">standard output</a> <a href="" target="_blank"></a> through a printf, the printing job must either be regulated by a mutex or a semaphore.
 
-All the timing monitoring shall be derived from <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">Unix Time</a>, thus making use of the (now deprecated) <a href="https://en.wikipedia.org/wiki/System_time" target="_blank">gettimeofday</a> function.
+All the timing monitoring shall be derived from <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">Unix Time</a>, thus making use of the (now discouraged) <a href="https://en.wikipedia.org/wiki/System_time" target="_blank">gettimeofday</a> function.
 
 <a href="" target="_blank"></a>
