@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tcorax42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:22:49 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/01/05 16:12:14 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/01/09 10:44:01 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,20 @@ int	_case_regular_separator(t_splitter *v)
 	return (EXIT_SUCCESS);
 }
 
+/**
+ * @brief Specific Case switcher for $ operators found on v.input. $$ operator
+ * is intercepted and handled here and in _literal_buffer loop, for the moment.
+ * 
+ * @param v 
+ * @return int 
+ */
 int	_case_var(t_splitter *v)
 {
 	if (is_var(v->input[v->old_cursor]))
 	{
 		ft_printd(0, "entering VAR, cursor{%d}\n", v->old_cursor);
-		ft_printd(0, "{%c}\n", v->input[v->old_cursor + 1]);
 		if (v->input[v->old_cursor + 1] == '?')
 		{
-			ft_printd(0, "handling exit status\n");
 			if (handle_exit_status(v))
 			{
 				ft_printd(0, "Exit_status expansion\n");
@@ -82,11 +87,17 @@ int	_case_var(t_splitter *v)
 						ft_strdup("!!! _case_VAR"), DO_NOT_RESET));
 			}
 		}
+		else if (is_var(v->input[v->old_cursor + 1]))
+		{
+			if (!v->bufferline)
+				v->bufferline = ft_strdup("");
+			v->bufferline = ft_strjoinfree(v->bufferline,
+					ft_itoa((int)getpid()));
+			v->cursor += 2;
+		}
 		else if (handle_var(v))
 			return (error_handler(g_exit_status,
 					ft_strdup("!!! _case_VAR"), DO_NOT_RESET));
-		ft_printd(0, "*** exiting case_VAR. arguments so far:\n");
-		ft_printd(0, "exiting VAR, cursor{%d}\n", v->old_cursor);
 	}
 	return (EXIT_SUCCESS);
 }

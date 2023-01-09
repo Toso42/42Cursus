@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   msh_expansion_handlers.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tdi-leo <tcorax42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:22:54 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/01/05 16:16:57 by kzak             ###   ########.fr       */
+/*   Updated: 2023/01/09 11:13:37 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	_move_cursor_var_terminator(size_t *v, char *toparse)
 /**
  * @brief This function is called to expand a $variable found in shell.input.
  * The function joins the value to bufferline. If the variable doesnt expand, 
- * a NULL argument is joined.
+ * a NULL argument is joined. 
  * 
  * @param v 
  * @param envp_match 
@@ -94,20 +94,50 @@ int	handle_var(t_splitter *v)
 
 	var_expanded = NULL;
 	envp_match = NULL;
+	var_name = NULL;
 	v->cursor += 1;
 	utility_c = v->cursor;
 	env_cursor = -1;
+	if (is_var(v->input[v->cursor]))
+	{
+		if (!v->bufferline)
+			v->bufferline = ft_strdup("");
+		v->bufferline = ft_strjoinfree(v->bufferline,
+			ft_strdup(ft_itoa((int)getpid())));
+		v->cursor += 2;
+		return (_stupid_norm_trick(v, utility_c, var_name));
+	}
 	if (_move_cursor_var_terminator(&utility_c, v->input))
-		return (EXIT_FAILURE);
+	{
+		v->cursor -= 1;
+		jointo_buffer(v, 0);
+		v->cursor += 1;
+		return (_stupid_norm_trick(v, utility_c, var_name));
+	}
+	if (v->cursor == utility_c)
+	{
+		if (!v->bufferline)
+			v->bufferline = ft_strdup("");
+		v->bufferline = ft_strjoinfree(v->bufferline, ft_strdup("$"));
+		return (_stupid_norm_trick(v, utility_c, var_name));
+	}
 	var_name = ft_substr(v->input, v->cursor, (utility_c - v->cursor));
+	ft_printd(1, "{%s}\n", var_name);
 	while (!envp_match && v->envp[++env_cursor])
-		envp_match = ft_strnstr_precision(v->envp[env_cursor], var_name,
-				ft_strlen(var_name), '=');
+			envp_match = ft_strnstr_precision(v->envp[env_cursor], var_name,
+					ft_strlen(var_name), '=');
 	if (envp_match)
 	{
 		_join_var_to_buffer(v, envp_match, var_expanded);
 		if (!v->handling_dquote && split_var_buffer(v))
 			return (EXIT_FAILURE);
+	}
+	else
+	{
+		ft_printd(1, "dovrei essere qui\n");
+		v->cursor -= 1;
+		jointo_buffer(v, 0);
+		v->cursor += 1;
 	}
 	return (_stupid_norm_trick(v, utility_c, var_name));
 }

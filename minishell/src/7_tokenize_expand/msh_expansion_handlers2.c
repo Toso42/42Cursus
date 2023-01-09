@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tcorax42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:22:59 by tdi-leo           #+#    #+#             */
-/*   Updated: 2022/12/29 16:42:32 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/01/09 11:01:02 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ int	handle_exit_status(t_splitter *v)
 }
 
 /**
- * @brief This loop handles buffer addition for literal case_handlers. If mode 1
- * is passed to parameter, the loop expands $variables on it's way.
+ * @brief This loop get called from quote handlers. This function handles buffer
+ * addition for literal case_handlers. If mode 1 is passed to parameter, the loop
+ * expands $variables on it's way. $$ operator is intercepted and handled here
+ * and in case_var, for the moment.
  * 
  * @param mode 
  * @param v 
@@ -33,10 +35,18 @@ static int	_literal_buffer_loop(int mode, t_splitter *v, size_t utility_c)
 {
 	while (v->cursor < utility_c)
 	{
+		ft_printd(1, "lit buf loop {%c} {%d}\n", v->input[v->cursor], v->cursor);
 		if (mode)
 		{
-			if (is_var(v->input[v->cursor])
-				&& !is_var_terminator(v->input[v->cursor + 1]))
+			if (is_var(v->input[v->cursor]) && is_var(v->input[v->cursor + 1]))
+			{
+				if (!v->bufferline)
+					v->bufferline = ft_strdup("");
+				v->bufferline = ft_strjoinfree(v->bufferline,
+						ft_itoa((int)getpid()));
+				v->cursor += 1;
+			}
+			else if (is_var(v->input[v->cursor]))
 			{
 				if (handle_var(v))
 					return (error_handler(g_exit_status,
@@ -46,8 +56,9 @@ static int	_literal_buffer_loop(int mode, t_splitter *v, size_t utility_c)
 			if (v->cursor >= utility_c)
 				break ;
 		}
-		ft_printd(0, "__JOINING CHAR {%c} TO BUFFER\n", v->input[v->cursor]);
-		jointo_buffer(v, 0);
+		ft_printd(1, "__JOINING CHAR {%c} TO BUFFER\n", v->input[v->cursor]);
+		if (!is_var(v->input[v->cursor]))
+			jointo_buffer(v, 0);
 		v->cursor += 1;
 	}
 	return (EXIT_SUCCESS);
