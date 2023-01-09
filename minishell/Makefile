@@ -1,4 +1,4 @@
-NAME := minishell
+NAME := sushi
 
 OS 	 := $(shell uname)
 
