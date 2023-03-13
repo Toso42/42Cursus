@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:31:58 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 11:01:18 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/13 16:46:25 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <math.h>
+# include <time.h>
 # include <string.h>
 # include "libft/libft.h"
 # include "minilibx/mlx.h"

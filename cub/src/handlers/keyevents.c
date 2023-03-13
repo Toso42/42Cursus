@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:46 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 12:05:29 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/13 17:30:29 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int	key_press(int key, t_mlx *game)
 {
 	if (key == K_ESC)
 		game->key.key_esc = 1;
-	else if (key == K_AR_U || key == KEY_W)
+	if (key == K_AR_U || key == KEY_W)
 		game->key.key_up = 1;
-	else if (key == K_AR_R)
+	if (key == K_AR_R)
 		game->key.key_right = 1;
-	else if (key == K_AR_L)
+	if (key == K_AR_L)
 		game->key.key_left = 1;
-	else if (key == K_AR_D || key == KEY_S)
+	if (key == K_AR_D || key == KEY_S)
 		game->key.key_down = 1;
 	if (key == KEY_A)
 		game->key.key_sidel = 1;

@@ -164,6 +164,8 @@ typedef struct s_mlx
 	t_dda			d;
 	t_dda			movd;
 	t_bresenhams	b;
+	clock_t			lastep;
+	clock_t			ctime;
 }	t_mlx;
 
 #endif

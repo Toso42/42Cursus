@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:42 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 15:35:53 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/13 17:33:55 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int			key_release(int key, t_mlx *game);
 void		check_events(t_mlx *game);
 //boundary
 t_point		limit_boundary(t_mlx *game, t_point *step);
-void	_limit_boundary2(t_mlx *game, t_point *pre, t_point *step);
+void		_limit_boundary2(t_mlx *game, t_point *pre, t_point *step);
 //movement
 void		move_up(t_mlx *game);
 void		move_behind(t_mlx *game);

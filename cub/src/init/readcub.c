@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:17 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/12 23:04:36 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/13 17:33:09 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	read_cubfile_create_mapstruct(char *argv_arg, t_mlx *game_env)
 	readen_cub = NULL;
 	next_line = NULL;
 	map_fd = open(argv_arg, O_RDONLY);
-	if (!map_fd)
+	if (map_fd < 0)
 		return (print_error("couldn't open the file"));
 	next_line = get_next_line(map_fd);
 	if (next_line)
