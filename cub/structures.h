@@ -162,6 +162,7 @@ typedef struct s_mlx
 	t_player		miniplayer;
 	t_key			key;
 	t_dda			d;
+	t_dda			movd;
 	t_bresenhams	b;
 }	t_mlx;
 

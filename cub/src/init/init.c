@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:27 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 11:04:52 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/13 12:43:00 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_mlx	*init_game(t_mlx *game)
 		|| !game->mlx_instance)
 		return (NULL);
 	game->d.h = NULL;
+	game->movd.h = NULL;
 	game->map->ceiling = NULL;
 	game->map->floor = NULL;
 	game->map->ntexture = NULL;

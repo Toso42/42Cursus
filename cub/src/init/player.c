@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:21 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 12:05:38 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/13 12:43:30 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	init_player(t_mlx *game)
 	game->key.key_sidel = 0;
 	game->key.key_sider = 0;
 	game->d.h = (t_hitpoint *)malloc(sizeof(t_hitpoint) * W_WIDTH);
+	game->movd.h = (t_hitpoint *)malloc(sizeof(t_hitpoint));
 	ft_printf("Player initialized:\n");
 	print_point(game->player.pos, "pos");
 	print_point(game->player.dir, "dir");

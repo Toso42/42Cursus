@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:49 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 12:07:52 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/13 16:02:24 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 t_point	limit_boundary(t_mlx *game, t_point *step)
 {
+	t_point	pre;
+
 	if (game->map->maparray[(int)step->y][(int)game->player.pos.x] == '1')
 		step->y = game->player.pos.y;
 	if (game->map->maparray[(int)game->player.pos.y][(int)step->x] == '1')
 		step->x = game->player.pos.x;
+	pre = (*step);
+	_limit_boundary2(game, &pre, step);
 	return ((*step));
 }
 

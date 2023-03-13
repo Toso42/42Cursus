@@ -36,6 +36,7 @@ SRC_MAIN = 	main.c \
 			src/handlers/keyevents.c \
 			src/handlers/movement.c \
 			src/handlers/movement2.c \
+			src/handlers/boundary.c \
 			src/loop/loop.c \
 			src/loop/minimap_buffer.c \
 			src/loop/minimap_buffer2.c \
