@@ -111,6 +111,8 @@ clean:
 	@echo "		${RED} ${NAME} OBJS deleted${RESET}"
 
 fclean: clean
+	rm -rf *.dylib
+	cd minilibx && make clean
 	@echo "	... [Removing $(NAME)]"
 	@rm -rf ${NAME}
 	@echo "		${RED}*.a's deleted${RESET}"
