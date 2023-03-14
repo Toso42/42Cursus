@@ -5,7 +5,7 @@ for the project is handled by the Minilibx, a didactic game engine making use
 of the X11 library.
 
 Bresenham and DDA algorithm were implemented in the realization of this project.
-Currently, this project is compatible with MACOs's only. It is my plan
+Currently, this project is compatible with MacOs's only. It is my plan
 to make it compatible with linux in the near future, with a deep refactoring
 presenting the code in a more polite form. A barebones collision system is implemented
 for player movements: Even though the current collision system is not perfectly optimized,
