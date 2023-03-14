@@ -19,4 +19,4 @@ stage, but i plan to rewrite and optimize this project as soon as i complete the
 
 A deep thanks goes to Mmarinel ( https://github.com/mmarinel ), whose skills and
 dedication have been a constant source of inspiration for me. Please make sure
-to check his amazing work.
+to check out his amazing work.
