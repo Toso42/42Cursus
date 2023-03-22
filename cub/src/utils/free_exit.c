@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:52:06 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/22 14:22:27 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:05:43 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	free_game(t_mlx *game)
 {
 	if (game->player.plap)
 		free(game->player.plap);
+	// if (game->d.h->timg)
+	// 	free(game->d.h->timg);
 	if (game->d.h)
 		free(game->d.h);
 	if (game->map->ntexture)
@@ -38,8 +40,8 @@ int	free_game(t_mlx *game)
 		free(game->map);
 	if (game->window_instance)
 		mlx_destroy_window(game->mlx_instance, game->window_instance);
-	if (game->mlx_instance)
-		ft_free(game->mlx_instance);
+	// if (game->mlx_instance)
+	// 	ft_free(game->mlx_instance);
 	if (game)
 		free(game);
 	return (1);

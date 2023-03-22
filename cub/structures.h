@@ -59,6 +59,7 @@ typedef struct s_rgb
 	int	b;
 }	t_rgb;
 
+//game.d.h.timg
 typedef struct s_hitpoint
 {
 	t_point	true_ray;
@@ -74,7 +75,7 @@ typedef struct s_hitpoint
 
 }	t_hitpoint;
 
-//todo strutture per il gioco
+// game.d.h
 typedef struct s_dda
 {
 	t_point		result;
@@ -99,6 +100,13 @@ typedef struct s_dda
 }	t_dda;
 
 // struct to hold textures and map references
+//maparray
+//floor
+//ceiling
+//ntexture
+//stexture
+//wtexture
+//etexture
 typedef struct s_map
 {
 	void	*ntexture;
@@ -121,6 +129,7 @@ typedef struct s_minimap
 	int		color;
 }	t_minimap;
 
+//game.player.plap
 typedef struct s_player
 {
 	int			initial_direction;
@@ -145,6 +154,9 @@ typedef struct s_bresenhams
 	int	swap;
 }	t_bresenhams;
 
+//game.map
+//game.window_instance
+//game.mlx_instance
 typedef struct s_mlx
 {
 	void			*mlx_instance;
