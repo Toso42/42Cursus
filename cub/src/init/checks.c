@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:30 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/11 13:49:58 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/22 14:11:23 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	_check_map(t_mlx *game_env, int y)
 	player_counter = 0;
 	while (game_env->map->maparray[++y])
 	{
-		ft_printf("checking this cubline: {%s}\n", game_env->map->maparray[y]);
+//		ft_printf("checking this cubline: {%s}\n", game_env->map->maparray[y]);
 		if (!_if_is_a_map_line(game_env->map->maparray[y]))
 			return (print_error("empty line on map"));
 		x = -1;

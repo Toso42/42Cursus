@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:27 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 16:51:42 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/22 14:17:00 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_mlx	*init_game(t_mlx *game)
 	game->map->etexture = NULL;
 	game->map->maparray = NULL;
 	game->window_instance = NULL;
+	game->player.plap = NULL;
 	game->map->wall_step = 1 / TEXT_SIZE;
 	game->minimap.minimap_w = 0;
 	game->minimap.minimap_h = 0;
