@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:27 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/22 14:17:00 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:14:27 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_mlx	*init_game(t_mlx *game)
 	game->minimap.color = 0;
 	game->minimap.tilesize = 0;
 	game->lastep = clock();
-	ft_printf("0 game initialized\n");
 	return (game);
 }
 

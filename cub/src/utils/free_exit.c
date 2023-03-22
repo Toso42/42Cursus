@@ -6,28 +6,32 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:52:06 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/22 15:05:43 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:19:15 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+//frees up texture addresses readen from map.cub
+int	free_textures(t_mlx *game)
+{
+	ft_free(game->map->ntexture);
+	game->map->ntexture = NULL;
+	ft_free(game->map->stexture);
+	game->map->stexture = NULL;
+	ft_free(game->map->wtexture);
+	game->map->wtexture = NULL;
+	ft_free(game->map->etexture);
+	game->map->etexture = NULL;
+	return (0);
+}
 
 int	free_game(t_mlx *game)
 {
 	if (game->player.plap)
 		free(game->player.plap);
-	// if (game->d.h->timg)
-	// 	free(game->d.h->timg);
 	if (game->d.h)
 		free(game->d.h);
-	if (game->map->ntexture)
-		ft_free(game->map->ntexture);
-	if (game->map->stexture)
-		ft_free(game->map->stexture);
-	if (game->map->wtexture)
-		ft_free(game->map->wtexture);
-	if (game->map->etexture)
-		ft_free(game->map->etexture);
+	free_textures(game);
 	if (game->map->floor)
 		free(game->map->floor);
 	if (game->map->ceiling)
@@ -40,8 +44,6 @@ int	free_game(t_mlx *game)
 		free(game->map);
 	if (game->window_instance)
 		mlx_destroy_window(game->mlx_instance, game->window_instance);
-	// if (game->mlx_instance)
-	// 	ft_free(game->mlx_instance);
 	if (game)
 		free(game);
 	return (1);
