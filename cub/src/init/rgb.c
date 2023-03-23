@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:54:29 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/23 15:05:30 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 18:14:07 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static t_rgb	*_fill_rgb(t_rgb *rgb_struct, char **rgbsplit)
 	trimmed = ft_strtrim(rgbsplit[2], "\n");
 	rgb_struct->b = ft_atoi(trimmed);
 	free(trimmed);
-	if (rgb_struct->r > 255
-		|| rgb_struct->g > 255
-		|| rgb_struct->b > 255)
+	if (rgb_struct->r < 0 || rgb_struct->r > 255
+		|| rgb_struct->g < 0 || rgb_struct->g > 255
+		|| rgb_struct->b < 0 || rgb_struct->b > 255)
 	{
 		free(rgb_struct);
 		print_error("invalid rgb values");
