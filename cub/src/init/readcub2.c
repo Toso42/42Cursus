@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 11:54:09 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/23 15:39:13 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 17:37:54 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static void	_assemble_maparray(t_mlx *game_env, t_mapfill *m, char **readen_cub,
 		m->y += 1;
 		m->x += 1;
 	}
-	ft_printf("map sarsize after trim: %d\n", ft_sarsize(game_env->map->maparray));
+	ft_printf("map sarsize after trim: %d\n",
+		ft_sarsize(game_env->map->maparray));
 }
 
 static void	_calc_size(t_mlx *game_env, t_mapfill *m, char **readen_cub,
