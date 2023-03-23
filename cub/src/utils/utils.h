@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:51:56 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/10 19:04:05 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 16:26:17 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_point	t_point;
 //time
 void	ms_wait(int amount);
 //print
-void	print_point(t_point point, char *name);
+void	print_point(t_point *point, char *name);
 int		print_error(char *error);
 //math
 t_point	round_point(t_point p);

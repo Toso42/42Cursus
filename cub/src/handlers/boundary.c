@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:33:46 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 16:24:23 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 16:53:23 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	_limit_boundary2(t_mlx *game, t_point *pre, t_point *step)
 		if (_yceil_is_out(game, step))
 				step->y = ceil(step->y) - 0.03;
 	}
-	else if (pre->x - step->x < 0)
+	if (pre->x - step->x < 0)
 	{
 		if (_xfloor_is_out(game, step))
 			step->x = floor(step->x) + 0.03;

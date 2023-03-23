@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:49 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 18:57:39 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 17:32:02 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,25 @@
 t_point	limit_boundary(t_mlx *game, t_point *step)
 {
 	t_point	pre;
+	// int		xdir;
+	// int		ydir;
 
 	pre = (*step);
+	// ft_printf("----------------\n");
+	// print_point(&game->player.pos, "player pos");
+	// print_point(&pre, "trying step");
 	if (game->map->maparray[(int)step->y][(int)game->player.pos.x] == '1')
 		step->y = game->player.pos.y;
 	if (game->map->maparray[(int)game->player.pos.y][(int)step->x] == '1')
 		step->x = game->player.pos.x;
+	if (game->map->maparray[(int)step->y][(int)step->x] == '1')
+	{
+		step->x = game->player.pos.x;
+		step->y = game->player.pos.y;
+	}
+	// print_point(step, "post hard limit");
 	_limit_boundary2(game, &pre, step);
+	// print_point(step, "post rou. limit");
 	return ((*step));
 }
 
