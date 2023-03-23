@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 11:14:23 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/12 20:15:45 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 12:46:12 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,13 @@ int	check_enclosure(t_map *map)
 	}
 	return (EXIT_SUCCESS);
 }
+
+//todo check cub name.
+
+//todo check invalid texture path.
+
+//todo too big rgb.
+
+//todo leak su empty lines mappa
+
+//todo collision muri spigolo convesso

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tdi-leo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:51:35 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 20:09:12 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 12:30:48 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ void	print_env(t_mlx *game_env)
 	ft_sarprint(game_env->map->maparray);
 }
 
-// void	print_point(t_point point, char *name)
-// {
-// 	printf("{ %s x: %f y: %f }\n", name, point.x, point.y);
-// }
 int	print_error(char *error)
 {
 	ft_printf("%s\n", error);

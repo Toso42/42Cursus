@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:10:43 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/02/27 16:08:03 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 12:31:38 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,18 +122,3 @@ char	*get_next_line(int fd)
 		return (NULL);
 	return (line);
 }
-
-// int	main(void)
-// {
-// 	int	fd;
-
-// 	fd = open("map2.ber", O_RDONLY);
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// }
