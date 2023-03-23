@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 12:49:15 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/10 19:46:57 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 15:38:17 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,10 @@ char	*ft_strtrimfree(char *s1, char const *set)
 	fc = first_char(s1, set);
 	lc = last_char(s1, set);
 	if (fc >= lc)
+	{
+		ft_free(s1);
 		return (ft_strdup(""));
+	}
 	cp = (char *) malloc (sizeof(char) * (lc - fc + 1));
 	if (cp == NULL)
 		return (NULL);

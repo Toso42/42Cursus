@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rgb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tdi-leo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:54:29 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 20:10:40 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 15:05:30 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ static t_rgb	*_fill_rgb(t_rgb *rgb_struct, char **rgbsplit)
 	if (rgb_struct->r > 255
 		|| rgb_struct->g > 255
 		|| rgb_struct->b > 255)
+	{
+		free(rgb_struct);
+		print_error("invalid rgb values");
 		return (NULL);
+	}
 	return (rgb_struct);
 }
 
@@ -40,7 +44,6 @@ static char	**_rgbsplit(char **rgbsplit, char **split)
 		ft_sarfree(rgbsplit, ft_sarsize(rgbsplit));
 		return (NULL);
 	}
-	ft_sarprint(rgbsplit);
 	return (rgbsplit);
 }
 

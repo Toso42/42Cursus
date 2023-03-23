@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 11:54:09 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 19:10:38 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 15:39:13 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static void	_assemble_maparray(t_mlx *game_env, t_mapfill *m, char **readen_cub,
 		m->y += 1;
 		m->x += 1;
 	}
+	ft_printf("map sarsize after trim: %d\n", ft_sarsize(game_env->map->maparray));
 }
 
 static void	_calc_size(t_mlx *game_env, t_mapfill *m, char **readen_cub,
@@ -67,6 +68,7 @@ int	fill_map(t_mlx *game_env, char	**readen_cub, int from)
 	t_mapfill	m;
 
 	_calc_size(game_env, &m, readen_cub, from);
+	ft_printf("height: %d\n", m.map_height);
 	game_env->map->maparray = (char **)malloc(sizeof(char *)
 			* m.map_height + 1);
 	game_env->map->maparray[m.map_height] = NULL;

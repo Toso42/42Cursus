@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:52:06 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/22 15:19:15 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 15:26:18 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	free_game(t_mlx *game)
 	if (game->movd.h)
 		free(game->movd.h);
 	if (game->map->maparray)
-		ft_sarfree(game->map->maparray, ft_sarsize(game->map->maparray));
+		ft_sarfree(game->map->maparray, game->map->height);
 	if (game->map)
 		free(game->map);
 	if (game->window_instance)

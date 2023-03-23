@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 11:14:23 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/23 12:46:12 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 15:40:16 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,50 @@ int	check_enclosure(t_map *map)
 	return (EXIT_SUCCESS);
 }
 
-//todo check cub name.
+//checks map file extension
+int	check_extension(char *arg, char *extension)
+{
+	int		i;
+	int		j;
+	char	*p;
 
-//todo check invalid texture path.
+	i = 0;
+	j = ft_strlen(extension);
+	if (!arg[i] || j == 0)
+		return(1);
+	while (arg[i])
+		i++;
+	if (i < j)
+		return(1);
+	p = &arg[i - j];
+	if (ft_strcmp(p, extension))
+		return(1);
+	return(0);
+}
 
-//todo too big rgb.
+int	check_texturefiles(t_mlx *game)
+{
+	int	fd;
 
-//todo leak su empty lines mappa
+	fd = 0;
+	if ((fd = open((char *)game->map->ntexture, O_RDONLY)) == -1
+		|| (fd = open((char *)game->map->stexture, O_RDONLY)) == -1
+		|| (fd = open((char *)game->map->wtexture, O_RDONLY)) == -1
+		|| (fd = open((char *)game->map->etexture, O_RDONLY)) == -1)
+		return(ft_printf("can't open texture files\n"));
+	if (check_extension(game->map->ntexture, ".xpm")
+		|| check_extension(game->map->stexture, ".xpm")
+		|| check_extension(game->map->wtexture, ".xpm")
+		|| check_extension(game->map->etexture, ".xpm"))
+		return(1);
+	ft_printf("texture files checked\n");
+	return(0);
+}
+
+// check invalid texture path.
+
+// too big rgb.
+
+//leak su empty lines mappa
 
 //todo collision muri spigolo convesso

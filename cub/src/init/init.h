@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:24 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/12 23:07:18 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 14:38:10 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int		check_enclosure(t_map *map);
 int		_check_map(t_mlx *game_env, int y);
 int		_is_player_marker(char c);
 int		_if_is_a_map_line(char *line);
+int		check_extension(char *arg, char *extension);
+int		check_texturefiles(t_mlx *game);
 
 //imgs
 int		load_textures(t_mlx *tex);

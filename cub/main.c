@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:57:14 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/13 11:04:25 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/23 15:06:15 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,13 @@ int	main(int argc, char **argv)
 	game = NULL;
 	if (argc != 2)
 		return (print_error("Only ./Cub3d + valid map"));
+	if (check_extension(argv[1], ".cub"))
+		return (print_error("Wrong mapfile format"));
 	game = init_game(game);
 	if (!game
 		|| read_cubfile_create_mapstruct(argv[1], game)
+		|| (!game->map->ceiling || !game->map->floor)
+		|| check_texturefiles(game)
 		|| _check_map(game, -1)
 		|| init_minimap(game)
 		|| init_player(game)
