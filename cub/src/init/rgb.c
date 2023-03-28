@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:54:29 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/28 13:27:53 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/28 16:35:50 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 int	split_arent_digit(char *rgbsplit)
 {
-	int	y = -1;
+	int	y;
+
+	y = -1;
 	while (rgbsplit[++y])
 	{
 		if (!ft_isdigit(rgbsplit[y]))
-		{
-			printf("non digit rgb\n");
-			return(TRUE);
-		}
+			return (TRUE);
 	}
-	return(FALSE);
+	return (FALSE);
 }
 
 static t_rgb	*_fill_rgb(t_rgb *rgb_struct, char **rgbsplit)
@@ -31,7 +30,7 @@ static t_rgb	*_fill_rgb(t_rgb *rgb_struct, char **rgbsplit)
 	char	*trimmed;
 
 	rgb_struct = (t_rgb *)malloc(sizeof(t_rgb));
-	if (!rgb_struct) 
+	if (!rgb_struct)
 		return (NULL);
 	rgb_struct->r = -1;
 	rgb_struct->g = -1;
