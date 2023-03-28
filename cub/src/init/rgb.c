@@ -6,23 +6,43 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:54:29 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/23 18:14:07 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:27:53 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "init.h"
+
+int	split_arent_digit(char *rgbsplit)
+{
+	int	y = -1;
+	while (rgbsplit[++y])
+	{
+		if (!ft_isdigit(rgbsplit[y]))
+		{
+			printf("non digit rgb\n");
+			return(TRUE);
+		}
+	}
+	return(FALSE);
+}
 
 static t_rgb	*_fill_rgb(t_rgb *rgb_struct, char **rgbsplit)
 {
 	char	*trimmed;
 
 	rgb_struct = (t_rgb *)malloc(sizeof(t_rgb));
-	if (!rgb_struct)
+	if (!rgb_struct) 
 		return (NULL);
-	rgb_struct->r = ft_atoi(rgbsplit[0]);
-	rgb_struct->g = ft_atoi(rgbsplit[1]);
+	rgb_struct->r = -1;
+	rgb_struct->g = -1;
+	rgb_struct->b = -1;
+	if (split_arent_digit(rgbsplit[0]) == FALSE)
+		rgb_struct->r = ft_atoi(rgbsplit[0]);
+	if (split_arent_digit(rgbsplit[1]) == FALSE)
+		rgb_struct->g = ft_atoi(rgbsplit[1]);
 	trimmed = ft_strtrim(rgbsplit[2], "\n");
-	rgb_struct->b = ft_atoi(trimmed);
+	if (split_arent_digit(trimmed) == FALSE)
+		rgb_struct->b = ft_atoi(trimmed);
 	free(trimmed);
 	if (rgb_struct->r < 0 || rgb_struct->r > 255
 		|| rgb_struct->g < 0 || rgb_struct->g > 255

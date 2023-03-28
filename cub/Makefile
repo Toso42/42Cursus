@@ -55,7 +55,7 @@ SRC_MAIN = 	main.c \
 
 SRC	= $(SRC_MAIN) 
 
-FLAGS				:= -g -Wall -Wextra -Werror -fcommon
+FLAGS				:= -g -Wall -Wextra -Werror -fcommon -O3
 MINI_FLAG			:= -Imlx
 
 OBJS				= $(addprefix $(OBJS_DIR)/, ${SRC:.c=.o})

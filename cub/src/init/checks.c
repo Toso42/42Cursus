@@ -6,7 +6,7 @@
 /*   By: tdi-leo <tdi-leo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:03:30 by tdi-leo           #+#    #+#             */
-/*   Updated: 2023/03/22 15:14:09 by tdi-leo          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:10:26 by tdi-leo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ int	_is_player_marker(char c)
 		|| c == 'S'
 		|| c == 'W'
 		|| c == 'E')
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }
