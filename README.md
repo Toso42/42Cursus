@@ -1,13 +1,18 @@
 # 42Cursus
-This is an historical view on my 42-School Projects.
 
-In this Git i will upload, in time, the projects that i have completed during my experience at the 42 School of Rome. 
+This is a historical view of my 42 School projects.
+
+In this Git repository, I will gradually upload the projects that I have completed during my experience at 42 School of Rome.
 
 # Why this Git?
-I have created this Git to give myself an opportunity to look back at my past (and present) work from an outside perspective, and to let me stick for future reference my thoughts on what i learned during these assignments, while also explaining the code within these projects (and thus, reflect myself on what i have indeed learned and why i did what i did at the time of "pushing" the project).
+
+I have created this Git repository to give myself an opportunity to reflect on my past and present work from an outside perspective. It also serves as a reference for the future, allowing me to document my thoughts on what I learned during these assignments. Additionally, I aim to provide explanations for the code within these projects, enabling me to reflect on what I have learned and why I made certain choices when "pushing" each project.
 
 # What's 42 School?
-42 School is a private and free programming school, but it is also a tuiton-free model based on p2p learning and gamification. For more information on what the 42 School is and how it works, i'll provide links at the bottom of this readme. 
+
+42 School is a private and tuition-free programming school that follows a peer-to-peer learning and gamification model. For more information on what 42 School is and how it works, I will provide links at the bottom of this README.
+
+
 
 # Links
 42 School: https://42.fr/en/homepage/
