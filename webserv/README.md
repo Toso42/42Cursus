@@ -24,7 +24,7 @@ a few static pages meant for showcasing the webserver functionality:
 
 This software is provided as-is. Many comments are still present in the code
 which is a team-work of:
--Tommaso Di Leo (myself)
--Kevin Krzysztof Zak
--Catia Filiberto
+- Tommaso Di Leo (myself)
+- Kevin Krzysztof Zak
+- Catia Filiberto
 
