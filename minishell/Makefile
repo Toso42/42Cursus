@@ -144,7 +144,7 @@ LEAK_F  = -g -fsanitize=leak -llsan
 
 $(NAME): $(OBJS) $(READLINE_MAKEFILE)
 	@echo "	... [Making readline]"
-	@$(READLINE_CONFIGURE)
+#	@$(READLINE_CONFIGURE)
 	@$(READLINE_MAKE) 
 	@echo "		${GREEN}Readline compiled${RESET}"
 	@echo "	... [Making libft]"
