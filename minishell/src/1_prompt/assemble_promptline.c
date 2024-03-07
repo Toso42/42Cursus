@@ -17,7 +17,10 @@ static char	*_regular_prompt(t_shell *shell_p, char *prompt,
 {
 	char	*current_dir;
 	char	*sushi_color;
+	char	*usr = msh_get_env_value(shell_p->envp, "USER");
 
+	if (usr == NULL)
+		usr = ft_strdup("");
 	sushi_color = ft_strdup(GRAY_C"");
 	current_dir = current_dir_str(shell_p);
 	prompt = ft_strjoin(sushi_color, "[");
@@ -26,7 +29,7 @@ static char	*_regular_prompt(t_shell *shell_p, char *prompt,
 	prompt = ft_strjoinfree(prompt, strdup(sushi_color));
 	prompt = ft_strjoinfree(prompt, ft_strdup("]sushi~["));
 	prompt = ft_strjoinfree(prompt, strdup(color));
-	prompt = ft_strjoinfree(prompt, msh_get_env_value(shell_p->envp, "USER"));
+	prompt = ft_strjoinfree(prompt, usr);
 	prompt = ft_strjoinfree(prompt, ft_strdup(sushi_color));
 	prompt = ft_strjoinfree(prompt, ft_strdup("]["));
 	prompt = ft_strjoinfree(prompt, ft_strdup(BLUE_C""));
